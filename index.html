@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mohit Farm Machinery | Agriculture Machinery & Parts</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f8f2;
+            color: #222;
+        }
+
+        header {
+            background: #146b2c;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+                        url("https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1600&q=80");
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f5a623;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        section {
+            padding: 55px 7%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 32px;
+            color: #146b2c;
+            margin-bottom: 35px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,.1);
+        }
+
+        .card .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #146b2c;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            background: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            background: #103d1c;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .social a {
+            color: white;
+            text-decoration: none;
+            margin: 8px;
+            font-weight: bold;
+        }
+
+        .whatsapp {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,.3);
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav {
+                margin-top: 15px;
+            }
+
+            nav a {
+                margin-left: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚜 Mohit Farm Machinery</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Mohit Farm Machinery</h1>
+        <p>Complete Agriculture Machinery & Spare Parts</p>
+
+        <a href="#products" class="btn">View Products</a>
+        <a href="#contact" class="btn">Contact Us</a>
+    </div>
+</section>
+<section id="products">
+
+    <h2 class="title">🌾 Agriculture Machinery & Products</h2>
+    <div style="text-align:center; margin:25px auto; max-width:600px;">
+    <input
+        type="text"
+        id="productSearch"
+        placeholder="🔎 Search Tractor, Seeds, Rotavator..."
+        style="width:100%; padding:15px; border:2px solid #146b2c;
+        border-radius:10px; font-size:16px;"
+        onkeyup="searchProducts()"
+    >
+<div style="text-align:center; margin:20px 0;">
+
+    <button onclick="filterCategory('all')" class="btn">
+        All
+    </button>
+
+    <button onclick="filterCategory('machine')" class="btn">
+        🚜 Machines
+    </button>
+
+    <button onclick="filterCategory('seed')" class="btn">
+        🌱 Seeds
+    </button>
+
+    <button onclick="filterCategory('parts')" class="btn">
+        🔩 Spare Parts
+    </button>
+
+</div>
+
+    <p style="text-align:center; margin-bottom:30px;">
+        Quality Farm Machinery, Equipment, Spare Parts & Seeds
+    </p>
+
+    <div class="products">
+
+        
+            <div class="card">
+    <div class="icon">🚜</div>
+
+    <h3>Tractor</h3>
+
+    <p><strong>💰 Price:</strong> Contact for Price</p>
+    <p><strong>📦 Availability:</strong> Available on Enquiry</p>
+
+    <p>Tractors & agricultural tractor equipment</p>
+
+    <a href="https://wa.me/918874582580?text=Hello%20Mohit%20Farm%20Machinery,%20I%20want%20information%20about%20Tractor." class="btn">
+        WhatsApp Enquiry
+    </a>
+    <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+</div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Combine Harvester</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+            <p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Harvesting machines & spare parts</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Combine%20Harvester." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>Rotavator</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Rotavators, blades & spare parts</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Rotavator." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Seed Drill</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Seed drills & sowing equipment</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Seed%20Drill." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Plough</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Ploughing and soil preparation equipment</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Plough." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔧</div>
+            <h3>Cultivator</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Cultivators and cultivation equipment</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Cultivator." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Disc Harrow</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Disc harrows and soil preparation machines</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Disc%20Harrow." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🥔</div>
+            <h3>Potato Planter & Digger</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Potato planting and harvesting machines</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Potato%20Machines." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Reaper</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Crop cutting and harvesting machines</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Reaper." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Thresher</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Grain threshing machines</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Thresher." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Straw Reaper</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Straw cutting and processing equipment</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Straw%20Reaper." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💧</div>
+            <h3>Irrigation Equipment</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Pumps, irrigation equipment & accessories</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Irrigation%20Equipment." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Sprayers</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Crop protection and agricultural sprayers</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Sprayers." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌿</div>
+            <h3>Mulcher</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Crop residue and field management machines</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Mulcher." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Baler</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Hay and straw baling machines</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Baler." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚜</div>
+            <h3>Farm Trailer</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Agricultural trailers and transport equipment</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Farm%20Trailer." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <!-- SEEDS -->
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Wheat Seeds</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Quality wheat seeds</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Wheat%20Seeds." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌾</div>
+            <h3>Rice Seeds</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Rice and paddy seeds</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Rice%20Seeds." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌽</div>
+            <h3>Maize Seeds</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Quality maize seeds</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Maize%20Seeds." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌻</div>
+            <h3>Mustard Seeds</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Mustard crop seeds</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Mustard%20Seeds." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🥕</div>
+            <h3>Vegetable Seeds</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Different vegetable crop seeds</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Vegetable%20Seeds." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+        <!-- SPARE PARTS -->
+
+        <div class="card">
+            <div class="icon">🔩</div>
+            <h3>Spare Parts</h3>
+            <p><strong>💰 Price:</strong> Contact for Price</p>
+<p><strong>📦 Availability:</strong> Available on Enquiry</p>
+            <p>Bearings, belts, chains, blades and other parts</p>
+            <a href="https://wa.me/918874582580?text=I%20want%20information%20about%20Agriculture%20Spare%20Parts." class="btn">WhatsApp Enquiry</a>
+            <a href="tractor.html" class="btn">
+    🔍 View Details
+</a>
+        </div>
+
+    </div>
+
+</section>
+<script>
+function searchProducts() {
+    let input = document.getElementById("productSearch");
+    let searchText = input.value.toLowerCase();
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+        let productName = card.innerText.toLowerCase();
+
+        if (productName.includes(searchText)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+<script>
+function filterCategory(category) {
+
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+
+        let name = card.innerText.toLowerCase();
+
+        if (category === "all") {
+            card.style.display = "block";
+        }
+
+        else if (category === "machine") {
+            if (!name.includes("seeds") && !name.includes("spare parts")) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        }
+
+        else if (category === "seed") {
+            if (name.includes("seeds")) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        }
+
+        else if (category === "parts") {
+            if (name.includes("spare parts")) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        }
+
+    });
+}
+</script>
+<section id="contact" style="padding:60px 20px; text-align:center;">
+
+    <h2>📞 Contact Us</h2>
+
+    <p>Mohit Farm Machinery</p>
+    <p>🚜 Agriculture Machinery • 🌱 Seeds • 🔩 Spare Parts</p>
+
+    <div style="max-width:600px; margin:30px auto;">
+
+        <a href="tel:8874582580"
+           class="btn"
+           style="display:block; margin:12px;">
+           📞 Call: 8874582580
+        </a>
+
+        <a href="https://wa.me/918874582580?text=Hello%20Mohit%20Farm%20Machinery%2C%20I%20want%20information%20about%20your%20products."
+           target="_blank"
+           class="btn"
+           style="display:block; margin:12px;">
+           💬 WhatsApp: 8874582580
+        </a>
+
+        <a href="https://www.instagram.com/itz_mohit_gangwar_/" 
+   target="_blank"
+   class="btn"
+   style="display:block; margin:12px;">
+   📷 Instagram itz_mohit_gangwar_
+</a>
+
+<a href="https://www.facebook.com/share/1DmZ2EW2LM/" 
+   target="_blank"
+   class="btn"
+   style="display:block; margin:12px;">
+   📘 Facebook Mohit Gangwar
+</a>
+
+<a href="https://www.linkedin.com/in/mohit-gangwar-1188162a7/" 
+   target="_blank"
+   class="btn"
+   style="display:block; margin:12px;">
+   💼 LinkedIn Mohit Gangwar
+</a>
+
+    </div>
+
+</section>
+<footer style="text-align:center; padding:30px 20px; margin-top:40px;">
+
+    <h3>🚜 Mohit Farm Machinery</h3>
+
+    <p>
+        Agriculture Machinery • Seeds • Spare Parts
+    </p>
+
+    <p>
+        📱 WhatsApp: 8874582580
+    </p>
+
+    <p>
+        ©️ 2026 Mohit Farm Machinery. All Rights Reserved.
+    </p>
+
+</footer>
+            
